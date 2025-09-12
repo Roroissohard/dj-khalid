@@ -1,14 +1,21 @@
-var slideIndex = 0;
-carousel();
+let slideIndex = 0;
+const slides = document.querySelectorAll('.slide');
+const prev = document.querySelector('.prev');
+const next = document.querySelector('.next');
 
-function carousel() {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-  }
-  slideIndex++;
-  if (slideIndex > x.length) {slideIndex = 1}
-  x[slideIndex-1].style.display = "block";
-  setTimeout(carousel, 2000); // Change image every 2 seconds
+function showSlide(n) {
+  slides.forEach((slide, i) => {
+    slide.classList.toggle('active', i === n);
+  });
 }
+
+function changeSlide(offset) {
+  slideIndex = (slideIndex + offset + slides.length) % slides.length;
+  showSlide(slideIndex);
+}
+
+prev.addEventListener('click', () => changeSlide(-1));
+next.addEventListener('click', () => changeSlide(1));
+
+// Auto-show first slide
+showSlide(slideIndex);

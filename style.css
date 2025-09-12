@@ -12,15 +12,16 @@ body {
   font-family: "Archivo Black", sans-serif;
   font-weight: 400;
   font-style: normal;
-  background-color: rgb(237, 166, 255);
+  background-color: #4e2d57;
 }
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333333;
-  position: sticky;
+  background-image: url(https://wallpapersok.com/images/high/dark-aesthetic-louis-vuitton-phone-waw64q6521lr6oyv.jpg);
+  background-size: contain;
+  position: vertical;
   top: 0;
   font-family: "Fjalla One", sans-serif;
   font-weight: 400;
@@ -40,15 +41,55 @@ ul li a {
 }
 
 ul li a:hover {
-  background-color: #ecafff;
+  background-color: #f2d1fc;
 }
 
 ul li a.active {
-  background-color: #4e2d57;
+  background-color: #e68aff;
 }
 .center {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 30%;
+}
+.slider {
+  position: relative;
+  max-width: 600px;
+  margin: 40px auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  background: #fff;
+}
+.slide {
+  display: none;
+  width: 100%;
+  height: 350x;
+  object-fit: cover;
+}
+.slide.active {
+  display: block;
+}
+.slider .prev,
+.slider .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 12px;
+  margin-top: -22px;
+  color: #4e2d57;
+  font-weight: bold;
+  font-size: 24px;
+  border: none;
+  background: rgba(255,255,255,0.7);
+  border-radius: 50%;
+  user-select: none;
+}
+.slider .prev {
+  left: 10px;
+}
+.slider .next {
+  right: 10px;
 }
